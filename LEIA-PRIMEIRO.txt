@@ -1,0 +1,31 @@
+AURORA TV - TESTE NO WINDOWS
+==========================
+
+1. Clique com o botao direito no ZIP e escolha "Extrair tudo".
+2. Abra a pasta extraida. Nao execute de dentro do ZIP.
+3. De dois cliques em ABRIR-AURORA.bat.
+4. A Aurora vai abrir no seu navegador automaticamente.
+
+Se faltar Python, o iniciador abre o site oficial para voce instalar.
+Instale Python 3.10 ou mais recente. Depois abra ABRIR-AURORA.bat novamente.
+Este pacote nao inclui o Python e nao exige outros pacotes.
+
+DE UMA VOLTINHA
+- Use o mouse para clicar nos filmes e abrir os detalhes.
+- Clique em "Minha lista" nos detalhes para salvar um favorito.
+- Clique em "Assistir" para testar um video (precisa de internet).
+- Em "Sua biblioteca", escolha um video que voce ja tenha no computador.
+- Use as setas e Enter para navegar como se fosse um controle remoto.
+- Aperte Esc para voltar. F11 coloca o navegador em tela cheia.
+- A engrenagem abre as configuracoes.
+
+PARA FECHAR
+Feche a aba do navegador e a janela do iniciador.
+
+IMPORTANTE
+E uma primeira versao de demonstracao. Nao instala sistema operacional,
+nao altera sua TV Box e nao mexe nas configuracoes de rede do Windows.
+Series e canais ao vivo ainda nao tem conteudo configurado.
+Os ajustes de hardware ainda nao estao conectados ao sistema real.
+O iniciador deste pacote serve apenas ao teste no proprio computador.
+O controle pelo celular exige o modo de rede descrito no README.md.

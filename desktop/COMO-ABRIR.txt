@@ -1,0 +1,23 @@
+AURORA TV - APLICATIVO WINDOWS
+
+Este arquivo acompanha o pacote produzido pelo GitHub Actions.
+1. Baixe AuroraTV-Windows na execução concluída do workflow Aplicativo Windows.
+2. No Windows, clique com o botão direito no ZIP > Extrair tudo.
+3. Abra a pasta extraída e dê dois cliques em AuroraTV.exe.
+
+Mantenha a pasta _internal junto ao aplicativo. Não precisa instalar Python.
+
+SETAS escolhem, ENTER assiste, ESC volta, F salva favorito.
+F11 alterna entre janela e tela cheia. Alt+F4 fecha.
+Adicionar pasta encontra os vídeos que você já tem no computador.
+Os vídeos não são enviados à internet.
+
+O primeiro catálogo tem dois projetos abertos da Blender Foundation;
+Sintel é apenas o trailer. Os vídeos remotos exigem internet.
+Seu conteúdo entra pela biblioteca local. Não há streaming comercial,
+catálogo de séries ou canais ao vivo conectado nesta edição.
+O controle pelo celular da versão web ainda não está ligado ao app nativo.
+
+Este protótipo não altera o Windows nem instala firmware na TV Box.
+Builds não são assinados digitalmente. O pacote Windows precisa ser
+validado em um Windows real antes de ser tratado como uma versão estável.
