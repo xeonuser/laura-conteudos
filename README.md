@@ -1,6 +1,23 @@
-# Nova versão: aplicativo nativo
+# Aurora TV — aplicativo para Windows
 
-A versão Qt/QML está em [desktop/README.md](desktop/README.md). Ela abre em janela própria, sem navegador. O workflow de Windows está preparado, mas o EXE ainda precisa ser gerado e testado no GitHub Actions. As instruções abaixo pertencem ao protótipo web anterior.
+**[BAIXAR AURORA TV PARA WINDOWS](https://github.com/xeonuser/laura-conteudos/releases/download/teste-windows-40051051571/AuroraTV-Windows.zip)** (aproximadamente 162 MB)
+
+1. Baixe o ZIP pelo link acima.
+2. No Windows, clique com o botão direito no arquivo → Extrair tudo.
+3. Abra a pasta AuroraTV e dê dois cliques em AuroraTV.exe.
+
+Não precisa instalar Python. Mantenha a pasta _internal junto ao aplicativo.
+Setas escolhem, Enter assiste, Esc volta, F favorita e F11 alterna tela cheia.
+Use Adicionar pasta para importar seus vídeos, sem upload.
+
+A compilação e o teste de inicialização do executável passaram no Windows do GitHub Actions.
+Uso em Windows físico, áudio audível e GPU ainda precisam de validação.
+Versão de teste sem assinatura digital; não é firmware para TV Box.
+
+A versão nativa está em [desktop/README.md](desktop/README.md).
+A documentação abaixo pertence ao protótipo web anterior.
+
+---
 
 # Aurora TV
 

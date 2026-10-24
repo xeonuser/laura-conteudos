@@ -1,3 +1,15 @@
+# Build Windows publicado
+
+O workflow 40051051571 concluiu com sucesso: sete testes, inicialização QML,
+empacotamento PyInstaller, inicialização do EXE empacotado e publicação do ZIP.
+Download público: https://github.com/xeonuser/laura-conteudos/releases/download/teste-windows-40051051571/AuroraTV-Windows.zip
+
+O pacote tem 161.630.710 bytes. A disponibilidade foi confirmada com HTTP 200.
+Ainda não foi validado em computador Windows físico. Os registros anteriores
+abaixo descrevem o estado antes desta compilação.
+
+---
+
 # Atualização: versão nativa 0.2
 
 Foi criada aplicação Qt/QML em desktop/, com player QtMultimedia, importação de pasta, favoritos e retomada. Sete testes passaram. Inicialização e interação Qt foram verificadas em Linux offscreen. O workflow de Windows foi preparado, mas ainda não executado; nenhum EXE foi produzido ou validado. O controle móvel da versão web não está conectado ao aplicativo nativo. Consulte desktop/README.md para detalhes.
