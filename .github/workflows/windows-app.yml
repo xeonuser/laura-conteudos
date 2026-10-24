@@ -36,8 +36,52 @@ jobs:
           desktop/app.py
       - name: Incluir instruções
         run: Copy-Item desktop/COMO-ABRIR.txt dist/AuroraTV/COMO-ABRIR.txt
+      - name: Testar aplicativo empacotado
+        env:
+          QT_QPA_PLATFORM: offscreen
+          QT_QUICK_BACKEND: software
+        shell: pwsh
+        run: |
+          $process = Start-Process -FilePath dist/AuroraTV/AuroraTV.exe -ArgumentList '--windowed','--smoke' -Wait -PassThru
+          if ($process.ExitCode -ne 0) { throw "O aplicativo empacotado falhou: $($process.ExitCode)" }
+      - name: Criar ZIP para download
+        shell: pwsh
+        run: Compress-Archive -Path dist/AuroraTV -DestinationPath AuroraTV-Windows.zip
       - uses: actions/upload-artifact@v4
         with:
           name: AuroraTV-Windows
-          path: dist/AuroraTV/
+          path: AuroraTV-Windows.zip
           retention-days: 30
+  download:
+    needs: windows
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: AuroraTV-Windows
+          path: package
+      - name: Disponibilizar download do teste
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BUILD_ID: ${{ github.run_id }}
+          BUILD_COMMIT: ${{ github.sha }}
+        shell: bash
+        run: |
+          cat > "$RUNNER_TEMP/release-notes.md" <<'NOTES'
+          Versão de teste da Aurora TV para Windows x64.
+
+          Baixe AuroraTV-Windows.zip, extraia tudo e abra AuroraTV/AuroraTV.exe.
+          Não é necessário instalar Python. Mantenha a pasta _internal junto ao EXE.
+
+          Use setas e Enter. Esc volta, F favorita e F11 alterna tela cheia.
+          Adicionar pasta importa os vídeos do seu computador, sem upload.
+
+          É um protótipo sem assinatura digital: não é firmware para TV Box.
+          Há dois títulos abertos de demonstração; Sintel é trailer.
+          Serviços comerciais, canais ao vivo e controle móvel não estão integrados.
+          O teste automático verifica inicialização; áudio, GPU e uso em Windows físico ainda precisam ser validados.
+          NOTES
+          gh release create "teste-windows-$BUILD_ID" package/AuroraTV-Windows.zip --repo "$GH_REPO" --target "$BUILD_COMMIT" --title 'Aurora TV — teste para Windows' --notes-file "$RUNNER_TEMP/release-notes.md" --prerelease
